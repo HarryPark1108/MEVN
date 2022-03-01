@@ -12,3 +12,11 @@ const ret = _.go(
     _.take(2)
 );
 console.log(ret)
+
+const ret_lazy = _.go(
+    a,
+    L.map(a => a),
+    L.filter(a => a % 2),
+    L.take(2)
+)
+console.log([...ret_lazy])
