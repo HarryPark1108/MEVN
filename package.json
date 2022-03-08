@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
-    "fxjs": "^0.21.3"
+    "fxjs": "^0.21.3",
+    "ramda": "^0.28.0"
   }
 }
