@@ -1,3 +1,6 @@
+// 4.1.2 http 객체로 웹서버 만들기
+// 2) http 객체를 이용해 서버 만들어보기 (2)
+
 import http from 'http'
 const PORT = 12010;
 const server = http.createServer((req, res) => {

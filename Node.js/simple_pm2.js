@@ -1,3 +1,6 @@
+// 4.2.1 일부러 중지되는 서버 만들기
+// 1) 서버 중지되게 만들기
+
 import http from 'http'
 const PORT = 12010;
 const server = http.createServer((req, res) => {
