@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+
+	<script src="https://unpkg.com/vue@next"></script>
+
+</head>
+<body>
+
+	<div id="parent" class="demo">
+		{{ count }}
+		<child :message="message" @increment="incrementHandle"></child>
+	</div>
+	
+	<script>
+		const main = {
+			data() {
+				return {
+					message: "안녕 안녕 나는 동영이야~",
+					count: 1
+				}
+			},
+			methods: {
+				incrementHandle() {
+					this.count++
+				}
+			}
+		}
+		const app = Vue.createApp(main)
+		
+		// child라는 자식 컴포넌트가 있고, id가 parent인 부모 컴포넌트와의 데이터 흐름을 볼 수 있다.
+		// 부모는 자식에게 message를 전달하고(props), 
+		// 자식은 increment라는 이벤트 발생을 전달한다 ($emit)
+		// 이 때 자식 컴포넌트에서 부모 컴포넌트에게서 받은 props(message)를 수정해서는 안된다. 
+		
+		app.component("child", {
+			props: ["message"],
+			template: `
+				<div class="blog-post">
+					<h4>{{ message }}</h4>
+					<button @click="$emit('increment')">
+						증가 +
+					</button>
+				</div>
+			`
+		})
+		app.mount("#parent")
+	</script>
+
+</body>
+</html>

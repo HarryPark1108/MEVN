@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>	
+	<title>Document</title>
+	<script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+	<div id="app" class="demo">
+		<span :name="message">{{ message }}</span>
+	</div>
+	<script>
+		const main = {
+			data() {
+				return {
+					message: "안녕 안녕 나는 큰돌이야~"
+				}
+			},
+			created() {
+				console.log(this.message)
+				console.log(this.$el)
+			},
+			mounted() {
+				console.log(this.message)
+				console.log(this.$el)
+			}
+		}
+		Vue.createApp(main).mount("#app")
+	</script>
+</body>
+</html>
